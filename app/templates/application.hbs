@@ -1,6 +1,6 @@
 {{page-title "Mira"}}
 
-<Mira @look={{this.look}}/>
+<Mira @look={{this.look}} @jump={{this.jump}}/>
 
 <div local-class="look-controls">
   <button type="button" {{on "click" (fn (mut this.look) "tilt-left")}} aria-pressed={{eq this.look "tilt-left"}} aria-label="tilt left">{{fa-icon "undo"}}</button>
@@ -12,6 +12,7 @@
   <button type="button" {{on "click" (fn (mut this.look) "right")}} aria-pressed={{eq this.look "right"}} aria-label="look right">{{fa-icon "arrow-right"}}</button>
 
   <button local-class="auto" type="button" {{on "click" (fn (mut this.look) undefined)}} aria-pressed={{eq this.look undefined}}>auto</button>
+  <button local-class="jump" type="button" {{on "click" this.toggleJump}}>jump</button>
 </div>
 
 {{outlet}}

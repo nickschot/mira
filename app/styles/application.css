@@ -45,7 +45,12 @@
 }
 
 .look-controls .auto {
-  grid-column: 1 / 4;
-  border-radius: 25px;
+  grid-column: 1 / 2;
+  border-radius: 25px 5px 5px 25px;
+  margin-top: 15px;
+}
+.look-controls .jump {
+  grid-column: 2 / 4;
+  border-radius: 5px 25px 25px 5px;
   margin-top: 15px;
 }

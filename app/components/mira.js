@@ -14,6 +14,7 @@ const LOOK_OPTIONS = [
 export default class MiraComponent extends Component {
   @tracked eyesClosed = false;
   @tracked _look;
+  @tracked _jump = false;
 
   constructor() {
     super(...arguments);
@@ -49,5 +50,12 @@ export default class MiraComponent extends Component {
     } finally {
       this._look = undefined;
     }
+  }
+
+  @task
+  *jumpTask() {
+    this._jump = false;
+    yield timeout(0);
+    this._jump = true;
   }
 }

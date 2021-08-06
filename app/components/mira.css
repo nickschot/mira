@@ -6,6 +6,11 @@
   background: transparent;
 
   overflow: hidden;
+  transform-origin: bottom;
+}
+
+.mira.jump {
+  animation: jump ease-out 1.5s;
 }
 
 .shadow {
@@ -107,5 +112,26 @@
   }
   100% {
     background-position: center -40px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0) scale(1,1);
+  }
+  20% {
+    transform: translateY(0) scale(1.05, 0.95);
+  }
+  25% {
+    transform: translateY(0) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-50px) scale(0.95, 1.05);
+  }
+  75% {
+    transform: translateY(0) scale(1.025, 0.95);
+  }
+  100% {
+    transform: translateY(0) scale(1,1);
   }
 }
