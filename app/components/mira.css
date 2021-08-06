@@ -93,7 +93,7 @@
   background: radial-gradient(rgba(224,78,57,1) 0%, rgba(255,255,255,1) 100%);
   background-repeat: no-repeat;
   background-size: 150% 120%;
-  animation: pulse infinite 5s;
+  animation: pulse infinite 3s;
   transform: scale(0.98);
 
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
@@ -101,12 +101,12 @@
 
 @keyframes pulse {
   0% {
-    background-position: center -30px;
+    background-position: center -40px;
   }
   50% {
     background-position: center 20px;
   }
   100% {
-    background-position: center -30px;
+    background-position: center -40px;
   }
 }
