@@ -25,6 +25,6 @@ button:hover {
 }
 
 button[aria-pressed] {
-  box-shadow: inset 0 0 75px 0 rgba(224,78,57,1);
+  box-shadow: inset 0 0 50px 10px rgba(224,78,57,0.8);
   color: #fff;
 }

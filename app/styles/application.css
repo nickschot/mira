@@ -40,6 +40,12 @@
   border-bottom-left-radius: 25px;
 }
 
-.look-controls button:last-child {
+.look-controls button:nth-child(6) {
   border-bottom-right-radius: 25px;
+}
+
+.look-controls .auto {
+  grid-column: 1 / 4;
+  border-radius: 25px;
+  margin-top: 15px;
 }
