@@ -24,20 +24,22 @@
 
 .look-controls button {
   border-radius: 5px;
+  font-size: 18px;
+  padding: 22px 16px;
 }
 
 .look-controls button:nth-child(1) {
-  border-top-left-radius: 15px;
+  border-top-left-radius: 25px;
 }
 
 .look-controls button:nth-child(3) {
-  border-top-right-radius: 15px;
+  border-top-right-radius: 25px;
 }
 
 .look-controls button:nth-child(4) {
-  border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 25px;
 }
 
 .look-controls button:last-child {
-  border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 25px;
 }
