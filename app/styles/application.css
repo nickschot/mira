@@ -1,0 +1,43 @@
+.look-controls {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  display: grid;
+  width: 200px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3px;
+  border-radius: 15px;
+}
+
+.look-controls::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -12.5%;
+  width: 125%;
+  height: 40%;
+  background: rgba(0,0,0,0.5);
+  filter: blur(40px);
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.look-controls button {
+  border-radius: 5px;
+}
+
+.look-controls button:nth-child(1) {
+  border-top-left-radius: 15px;
+}
+
+.look-controls button:nth-child(3) {
+  border-top-right-radius: 15px;
+}
+
+.look-controls button:nth-child(4) {
+  border-bottom-left-radius: 15px;
+}
+
+.look-controls button:last-child {
+  border-bottom-right-radius: 15px;
+}

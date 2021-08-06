@@ -28,6 +28,8 @@
     "@embroider/compat": "^0.41.0",
     "@embroider/core": "^0.41.0",
     "@embroider/webpack": "^0.41.0",
+    "@fortawesome/ember-fontawesome": "^0.2.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "babel-eslint": "^10.1.0",
@@ -41,7 +43,8 @@
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
-    "ember-data": "~3.27.1",
+    "ember-concurrency": "^2.1.2",
+    "ember-css-modules": "^1.5.0",
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.0.4",
     "ember-load-initializers": "^2.1.2",
@@ -51,7 +54,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.27.2",
     "ember-template-lint": "^3.4.2",
-    "ember-welcome-page": "^4.0.0",
+    "ember-truth-helpers": "^3.0.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-ember": "^10.4.2",
@@ -70,5 +73,9 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "volta": {
+    "node": "16.6.1",
+    "npm": "7.20.5"
   }
 }

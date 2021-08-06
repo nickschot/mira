@@ -1,7 +1,15 @@
 {{page-title "Mira"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<Mira @look={{this.look}} @eyes={{this.eyes}}/>
+
+<div local-class="look-controls">
+  <button type="button" {{on "click" (fn (mut this.look) "tilt-left")}} aria-pressed={{eq this.look "tilt-left"}} aria-label="tilt left">{{fa-icon "undo"}}</button>
+  <button type="button" {{on "click" (fn (mut this.look) "up")}} aria-pressed={{eq this.look "up"}} aria-label="look up">{{fa-icon "arrow-up"}}</button>
+  <button type="button" {{on "click" (fn (mut this.look) "tilt-right")}} aria-pressed={{eq this.look "tilt-right"}} aria-label="tilt right">{{fa-icon "redo"}}</button>
+
+  <button type="button" {{on "click" (fn (mut this.look) "left")}} aria-pressed={{eq this.look "left"}} aria-label="look left">{{fa-icon "arrow-left"}}</button>
+  <button type="button" {{on "click" (fn (mut this.look) "center")}} aria-pressed={{eq this.look "center"}} aria-label="look center">{{fa-icon "dot-circle"}}</button>
+  <button type="button" {{on "click" (fn (mut this.look) "right")}} aria-pressed={{eq this.look "right"}} aria-label="look right">{{fa-icon "arrow-right"}}</button>
+</div>
 
 {{outlet}}
