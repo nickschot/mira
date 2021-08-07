@@ -1,7 +1,11 @@
+:root {
+  --mira-size: 300px;
+}
+
 .mira {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: var(--mira-size);
+  height: var(--mira-size);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   background: transparent;
 
@@ -13,17 +17,21 @@
    * combined with a border-radius.
    */
   transform: translateZ(0);
+  z-index: 2;
 }
 
 .shadow {
-  width: 250px;
-  height: 50px;
-  margin-top: -40px;
+  width: calc(var(--mira-size) * 0.8);
+  height: calc(var(--mira-size) * 0.15);
+  margin-top: calc(var(--mira-size) * -0.12);
+  margin-left: calc(var(--mira-size) * 0.1);
   border-radius: 100%;
-  background: rgba(0,0,0,0.5);
-  filter: blur(25px);
-  z-index: -1;
+  background: #000;
+  opacity: 0.5;
+  filter: blur(calc(var(--mira-size) * 0.08));
+  z-index: 1;
   transform-origin: center;
+  transform: translateZ(0);
 }
 
 .mira.jump {
@@ -49,12 +57,12 @@
 }
 
 .head.tilt-left {
-  transform: rotate(-15deg) translate(-40px, -30px);
+  transform: rotate(-15deg) translate(-10%, -8%);
   border-radius: 0 0 50% 50% / 0 0 20% 20%;
 }
 
 .head.tilt-right {
-  transform: rotate(15deg) translate(40px, -30px);
+  transform: rotate(15deg) translate(10%, -8%);
   border-radius: 0 0 50% 50% / 0 0 20% 20%;
 }
 
@@ -74,14 +82,15 @@
 
 .head.up {
   border-radius: 0 0 50% 50% / 0 0 0 0;
-  transform: translateY(-40px);
+  transform: translateY(-15%);
 }
 
 .eye {
+  --eye-size: calc(var(--mira-size) * 0.08);
   position: absolute;
-  bottom: 20px;
-  width: 25px;
-  height: 25px;
+  bottom: calc(var(--eye-size) * 0.8);
+  width: var(--eye-size);
+  height: var(--eye-size);
   background: #0D3349;
   border-radius: 100%;
   box-shadow: inset 0 0 0 rgba(255,255,255,0.85);
@@ -99,7 +108,7 @@
 }
 
 .eye.closed {
-  box-shadow: inset 0 25px 25px 25px #fff;
+  box-shadow: inset 0 var(--eye-size) var(--eye-size) var(--eye-size) #fff;
 }
 
 .body {
@@ -110,18 +119,18 @@
   transform: scale(0.975);
 
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 150px 0 #fff;
+  box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 calc(var(--mira-size) * 0.5) 0 #fff;
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 200px 0 #fff;
+    box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
   }
   50% {
-    box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 75px 0 #fff;
+    box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 calc(var(--mira-size) * 0.25) 0 #fff;
   }
   100% {
-    box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 200px 0 #fff;
+    box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25), inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
   }
 }
 
@@ -136,13 +145,13 @@
     transform: translateY(0) scale(1, 1);
   }
   45% {
-    transform: translateY(-45px) scale(0.95, 1.05);
+    transform: translateY(calc(var(--mira-size) * -0.15)) scale(0.95, 1.05);
   }
   50% {
-    transform: translateY(-50px) scale(0.95, 1.05);
+    transform: translateY(calc(var(--mira-size) * -0.17)) scale(0.95, 1.05);
   }
   55% {
-    transform: translateY(-50px) scale(0.95, 1.05);
+    transform: translateY(calc(var(--mira-size) * -0.17)) scale(0.95, 1.05);
   }
   75% {
     transform: translateY(0) scale(0.95, 1.05);
