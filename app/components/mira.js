@@ -29,7 +29,7 @@ export default class MiraComponent extends Component {
   @task
   *blinkTask() {
     while (true) {
-      yield timeout(5000);
+      yield timeout(2500 + Math.random() * 2500);
       this.eyesClosed = true;
       yield timeout(250);
       this.eyesClosed = false;
