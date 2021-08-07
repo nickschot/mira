@@ -54,9 +54,10 @@ export default class MiraComponent extends Component {
 
   @task({ drop: true })
   *jumpTask() {
-    this._jump = false;
-    yield timeout(0);
-    this._jump = true;
-    yield timeout(1500);
+    if (this._jump === false) {
+      this._jump = true;
+      yield timeout(1500);
+      this._jump = false;
+    }
   }
 }
