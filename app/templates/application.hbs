@@ -2,6 +2,12 @@
 
 <Mira @look={{this.look}} @jump={{this.jump}}/>
 
+<div local-class="mira-group">
+  {{#each this.smallMiras}}
+    <Mira/>
+  {{/each}}
+</div>
+
 <div local-class="look-controls">
   <button type="button" {{on "click" (fn (mut this.look) "tilt-left")}} aria-pressed={{eq this.look "tilt-left"}} aria-label="tilt left">{{fa-icon "undo"}}</button>
   <button type="button" {{on "click" (fn (mut this.look) "up")}} aria-pressed={{eq this.look "up"}} aria-label="look up">{{fa-icon "arrow-up"}}</button>

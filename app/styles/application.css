@@ -55,3 +55,16 @@
   border-radius: 5px 25px 25px 5px;
   margin-top: 15px;
 }
+
+.mira-group {
+  margin-top: 100px;
+  max-width: 520px;
+  --mira-size: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mira-group > * {
+  margin: 15px;
+}

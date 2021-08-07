@@ -10,4 +10,6 @@ export default class ApplicationController extends Controller {
   toggleJump() {
     this.jump = !this.jump;
   }
+
+  smallMiras = [...Array(12)];
 }
