@@ -115,7 +115,7 @@
   width: 100%;
   height: 100%;
   background: rgba(224,78,57,1);
-  animation: pulse infinite 3s;
+  /*animation: pulse infinite 3s;*/
   transform: scale(0.975);
 
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
