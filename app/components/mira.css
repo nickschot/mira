@@ -10,7 +10,7 @@
 }
 
 .mira.jump {
-  animation: jump ease-out 1.5s;
+  animation: jump linear 1.25s;
 }
 
 .shadow {
@@ -122,13 +122,22 @@
   20% {
     transform: translateY(0) scale(1.05, 0.95);
   }
-  25% {
+  30% {
     transform: translateY(0) scale(1, 1);
+  }
+  45% {
+    transform: translateY(-45px) scale(0.95, 1.05);
   }
   50% {
     transform: translateY(-50px) scale(0.95, 1.05);
   }
+  55% {
+    transform: translateY(-50px) scale(0.95, 1.05);
+  }
   75% {
+    transform: translateY(0) scale(0.95, 1.05);
+  }
+  85% {
     transform: translateY(0) scale(1.025, 0.95);
   }
   100% {
