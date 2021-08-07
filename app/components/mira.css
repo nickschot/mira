@@ -7,6 +7,12 @@
 
   overflow: hidden;
   transform-origin: bottom;
+
+  /*
+   * Prevent safari bug with transitioning an element with overflow hidden
+   * combined with a border-radius.
+   */
+  transform: translateZ(0);
 }
 
 .mira.jump {
