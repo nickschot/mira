@@ -1,0 +1,75 @@
+:root {
+  --mira-size: 300px;
+}
+
+.mira, .mira * {
+  transition: all 0.5s;
+}
+
+.mira {
+  position: relative;
+  width: var(--mira-size);
+  height: var(--mira-size);
+
+  background: transparent;
+
+  overflow: hidden;
+  transform-origin: bottom;
+
+  /*
+   * Prevent safari bug with transitioning an element with overflow hidden
+   * combined with a border-radius.
+   */
+  transform: translateZ(0);
+  z-index: 2;
+}
+
+
+:global(.step-1) .mira {
+  animation: drop-in 1.25s linear;
+  animation-fill-mode: forwards;
+}
+
+:global(.step-1) .mira {
+  background: #fff;
+}
+
+:global(.step-3) .mira {
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+@keyframes drop-in {
+  0% {
+    transform: translateY(calc(-100vh)) scale(0.9, 1.1);
+  }
+  75% {
+    transform: translateY(0) scale(0.95, 1.05);
+  }
+  80% {
+    transform: translateY(0) scale(1, 1);
+  }
+  85% {
+    transform: translateY(0) scale(1.2, 0.9);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+@keyframes move-right {
+  0% {
+    transform: skewX(0deg) translateX(0);
+  }
+  30% {
+    transform: skewX(10deg) translateX(100px);
+  }
+  70% {
+    transform: skewX(15deg) translateX(250px);
+  }
+  90% {
+    transform: skewX(-15deg) translateX(333px);
+  }
+  100% {
+    transform: skewX(0deg) translateX(333px);
+  }
+}

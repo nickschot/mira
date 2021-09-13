@@ -1,0 +1,9 @@
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu {
+  margin-top: 100px;
+}

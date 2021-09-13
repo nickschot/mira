@@ -1,0 +1,33 @@
+.page {
+  display: flex;
+  //gap: 100px;
+  align-items: center;
+}
+
+.code pre, .code code {
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.code {
+  margin-right: 100px;
+}
+
+.code pre {
+  /*background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);*/
+  border-radius: 2rem;
+  padding: 2rem;
+  display: block;
+  font-size: 1.25em;
+}
+
+
+.mira {
+  //transition: margin-left 1s;
+}
+
+* + .mira {
+  //margin-left: 100px;
+}

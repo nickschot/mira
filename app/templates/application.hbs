@@ -1,24 +1,9 @@
 {{page-title "Mira"}}
 
-<Mira @look={{this.look}} @jump={{this.jump}}/>
+<AnimatedOrphans style="position: absolute; top: 0; left: 0;"/>
 
-<div local-class="mira-group">
-  {{#each this.smallMiras}}
-    <Mira/>
-  {{/each}}
-</div>
-
-<div local-class="look-controls">
-  <button type="button" {{on "click" (fn (mut this.look) "tilt-left")}} aria-pressed={{eq this.look "tilt-left"}} aria-label="tilt left">{{fa-icon "undo"}}</button>
-  <button type="button" {{on "click" (fn (mut this.look) "up")}} aria-pressed={{eq this.look "up"}} aria-label="look up">{{fa-icon "arrow-up"}}</button>
-  <button type="button" {{on "click" (fn (mut this.look) "tilt-right")}} aria-pressed={{eq this.look "tilt-right"}} aria-label="tilt right">{{fa-icon "redo"}}</button>
-
-  <button type="button" {{on "click" (fn (mut this.look) "left")}} aria-pressed={{eq this.look "left"}} aria-label="look left">{{fa-icon "arrow-left"}}</button>
-  <button type="button" {{on "click" (fn (mut this.look) "center")}} aria-pressed={{eq this.look "center"}} aria-label="look center">{{fa-icon "dot-circle"}}</button>
-  <button type="button" {{on "click" (fn (mut this.look) "right")}} aria-pressed={{eq this.look "right"}} aria-label="look right">{{fa-icon "arrow-right"}}</button>
-
-  <button local-class="auto" type="button" {{on "click" (fn (mut this.look) undefined)}} aria-pressed={{eq this.look undefined}}>auto</button>
-  <button local-class="jump" type="button" {{on "click" this.toggleJump}}>jump</button>
-</div>
+<nav class="button-group" local-class="home-nav">
+  <LinkTo @route="index" class="button" local-class="home"><FaIcon @icon="home"/></LinkTo>
+</nav>
 
 {{outlet}}
