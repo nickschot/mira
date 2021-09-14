@@ -3,11 +3,11 @@
 
 <main local-class="page" {{on-key "-" this.previousStep}} {{on-key "=" this.nextStep}}>
   <AnimatedContainer style="overflow: hidden" @duration={{500}}>
-    {{#animated-value this.currentCodeSnippet use=this.transition as |snippet|}}
-      {{#if snippet}}
+    {{#animated-value this.currentCodeSnippet use=this.transition as |item|}}
+      {{#if item}}
         {{outlet}}
         <div local-class="code">
-          <CodeBlock @code={{snippet}} />
+          <CodeBlock @code={{item.snippet}} @language={{item.language}}/>
         </div>
       {{/if}}
     {{/animated-value}}

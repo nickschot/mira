@@ -5,13 +5,13 @@
 }
 
 .code pre, .code code {
-  white-space: normal;
   margin: 0;
   padding: 0;
 }
 
 .code {
   margin-right: 100px;
+  width: 700px;
 }
 
 .code pre {
@@ -19,8 +19,6 @@
   backdrop-filter: blur(10px);*/
   border-radius: 2rem;
   padding: 2rem;
-  display: block;
-  font-size: 1.25em;
 }
 
 
