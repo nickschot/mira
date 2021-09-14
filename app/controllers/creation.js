@@ -8,23 +8,27 @@ import { assert } from '@ember/debug';
 
 const CODE_SNIPPETS = [
   {
-    snippet: `border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;`,
+    snippet: `.mira {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }`,
     language: 'css',
     steps: [2, 3],
   },
   {
-    snippet: `width: 100%;
-  height: 100%;
-  background: rgba(224, 78, 57, 1);
-    `,
+    snippet: `.body {
+    width: 100%;
+    height: 100%;
+    background: rgba(224, 78, 57, 1);
+  }`,
     language: 'css',
     steps: [5, 6],
   },
   {
-    snippet: `border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.25),
-              inset 0 0 calc(var(--mira-size) * 0.5) 0 #fff;
-    `,
+    snippet: `.body {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.25),
+                inset 0 0 calc(var(--mira-size) * 0.5) 0 #fff;
+  }`,
     language: 'css',
     steps: [7, 8],
   },
