@@ -1,6 +1,21 @@
 .page {
+  display: grid;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0;
+  padding: 0 8rem;
+}
+
+.content {
   display: flex;
-  //gap: 100px;
   align-items: center;
 }
 
@@ -9,7 +24,7 @@
   padding: 0;
 }
 
-.code {
+.code, .list {
   margin-right: 100px;
   width: 700px;
 }
@@ -19,6 +34,21 @@
   backdrop-filter: blur(10px);*/
   border-radius: 2rem;
   padding: 2rem;
+}
+
+.list {
+  background: rgba(255,255,255,0.85);
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.list ul {
+  margin: 0;
+}
+
+.list li {
+  padding: 0.5rem 0;
 }
 
 
