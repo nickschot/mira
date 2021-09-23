@@ -1,0 +1,41 @@
+.scene {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.actions {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 100%;
+  text-align: right;
+}
+
+.code {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  z-index: 2;
+}
+
+.street {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mira {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  transition: all 3s linear;
+  transform-origin: bottom center;
+  z-index: 1;
+}
+
+.mira.espresso {
+  left: 60%;
+  bottom: 60%;
+  transform: scale(0.5);
+}

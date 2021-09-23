@@ -1,5 +1,5 @@
-<div>
-  <div ...attributes local-class="mira {{if this._jump "jump"}}" class="mira" {{did-update (perform this.jumpTask) @jump}} role="presentation">
+<div ...attributes >
+  <div local-class="mira {{if this._jump "jump"}}" class="mira" {{did-update (perform this.jumpTask) @jump}} role="presentation">
     <div local-class="body"></div>
     <div local-class="head {{this.look}}">
       <div local-class="eye left {{if this.eyesClosed "closed"}}"></div>

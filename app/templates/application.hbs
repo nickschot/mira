@@ -2,8 +2,12 @@
 
 <AnimatedOrphans style="position: absolute; top: 0; left: 0;"/>
 
-<nav class="button-group" local-class="home-nav">
-  <LinkTo @route="index" class="button" local-class="home"><FaIcon @icon="home"/></LinkTo>
-</nav>
+<div local-class="app">
+  <nav class="button-group" local-class="home-nav">
+    <LinkTo @route="index" class="button" local-class="home"><FaIcon @icon="home"/></LinkTo>
+  </nav>
 
-{{outlet}}
+  <div local-class="content">
+    {{outlet}}
+  </div>
+</div>

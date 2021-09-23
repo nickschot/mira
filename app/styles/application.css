@@ -1,7 +1,21 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.content {
+  flex-grow: 1;
+  min-height: 100%;
+  display: flex;
+}
+
 .home-nav {
   position: absolute;
   top: 25px;
   left: 25px;
+  z-index: 1;
 }
 
 .home {
