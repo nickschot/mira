@@ -1,0 +1,27 @@
+{{page-title "Colosseum"}}
+
+<div local-class="scene">
+  <div local-class="queue {{if this.covid "covid"}}">
+    {{#animated-each this.queue use=this.transition duration=2000 as |miraInstance index|}}
+      <div data-id={{miraInstance}}>
+        {{log index}}
+        <Mira {{on "click" (fn this.toGroup miraInstance)}} @look="center" local-class="mira" />
+      </div>
+    {{/animated-each}}
+  </div>
+
+  <div local-class="group">
+    {{#animated-each this.group use=this.transition duration=2000 as |miraInstance|}}
+      <div data-id={{miraInstance}}>
+        <Mira {{on "click" (fn this.toQueue miraInstance)}} @look="center" local-class="mira" />
+      </div>
+    {{/animated-each}}
+  </div>
+
+  <div local-class="actions">
+    {{#if (not this.covid)}}
+      <button type="button" {{on "click" (fn (mut this.covid) true)}}>Social distancing</button>
+    {{/if}}
+    <button type="button" {{on "click" this.allowEntry}} disabled={{not this.queue.length}}>Allow entry</button>
+  </div>
+</div>

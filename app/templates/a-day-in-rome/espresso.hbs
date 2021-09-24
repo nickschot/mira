@@ -12,7 +12,8 @@
   {{/animated-if}}
 
   <div local-class="actions">
-    <button local-class="toggle-code" {{on "click" this.toggleCode}}>{{if this.showCode "Hide Code" "Show Code" }}</button>
-    <button local-class="toggle" {{on "click" this.toggleEspresso}}>{{if this.getEspresso "Go Outside" "Get Espresso" }}</button>
+    <button local-class="toggle-code" type="button" {{on "click" this.toggleCode}}>{{if this.showCode "Hide Code" "Show Code" }}</button>
+    <button local-class="toggle" type="button" {{on "click" this.toggleEspresso}}>{{if this.getEspresso "Go Outside" "Get Espresso" }}</button>
+    <LinkTo @route="a-day-in-rome.colosseum" class="button">To Colosseum</LinkTo>
   </div>
 </div>

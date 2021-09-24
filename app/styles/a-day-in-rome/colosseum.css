@@ -1,0 +1,55 @@
+.scene {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+
+  --mira-size: 100px;
+}
+
+.actions {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 100%;
+  text-align: right;
+}
+
+.code {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  z-index: 2;
+}
+
+.queue {
+  display: flex;
+  width: calc(100% - 200px);
+  height: 100px;
+
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  gap: 15px;
+  transition: gap 1500ms;
+}
+
+.queue.covid {
+  gap: 150px;
+}
+
+.group {
+  display: grid;
+  grid-template-columns: var(--mira-size) var(--mira-size) var(--mira-size);
+  grid-template-rows: var(--mira-size) var(--mira-size) var(--mira-size);
+  grid-gap: 15px;
+  width: 350px;
+  height: 350px;
+
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.mira {
+  cursor: pointer;
+}

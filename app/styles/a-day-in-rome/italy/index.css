@@ -1,0 +1,23 @@
+.scene {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.italy {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 100%;
+}
+
+.mira {
+}
+
+.actions {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 100%;
+  text-align: right;
+}

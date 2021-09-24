@@ -1,0 +1,25 @@
+.scene {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+.vatican {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.mira {
+  transform-origin: right bottom;
+  transform: scale(0.5) translateX(500px);
+}
+
+.actions {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  width: 100%;
+  text-align: right;
+}

@@ -1,0 +1,13 @@
+{{page-title "Vatican"}}
+
+<div local-class="scene">
+  <div local-class="vatican">
+      {{#animated-value "mira" use=this.transition duration=3000}}
+        <Mira @look="center" local-class="mira"/>
+      {{/animated-value}}
+  </div>
+</div>
+
+<div local-class="actions">
+  <LinkTo class="button" @route="a-day-in-rome.italy.index">Back to Italy</LinkTo>
+</div>

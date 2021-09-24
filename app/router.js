@@ -11,5 +11,9 @@ Router.map(function () {
   this.route('creation');
   this.route('a-day-in-rome', function () {
     this.route('espresso');
+    this.route('colosseum');
+    this.route('italy', function () {
+      this.route('vatican');
+    });
   });
 });
