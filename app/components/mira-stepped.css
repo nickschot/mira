@@ -50,6 +50,10 @@
   background: #fff;
 }
 
+:global(.step-2) .mira {
+  animation: none;
+}
+
 :global(.step-3) .mira {
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
