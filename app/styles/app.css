@@ -22,6 +22,7 @@ button, :global(.button) {
   cursor: pointer;
   font-weight: bolder;
   text-decoration: none;
+  display: inline-block;
 }
 
 button:hover, :global(.button):hover {
@@ -72,7 +73,7 @@ pre {
   border-radius: 2rem;
 }
 
-pre::before {
+/*pre::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -83,4 +84,4 @@ pre::before {
   filter: blur(50px);
   border-radius: 100%;
   z-index: -1;
-}
+}*/
