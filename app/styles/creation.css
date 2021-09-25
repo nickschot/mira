@@ -33,16 +33,13 @@
 
 .code {
   overflow: hidden;
+  margin-right: 100px;
+  width: 700px;
 }
 
 .code pre, .code code {
   margin: 0;
   padding: 0;
-}
-
-.code, .list {
-  margin-right: 100px;
-  width: 700px;
 }
 
 .code pre {
@@ -62,6 +59,7 @@
 
 .list li {
   padding: 0.5rem 0;
+  white-space: nowrap;
 }
 
 .mira-wrapper {

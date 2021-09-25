@@ -7,8 +7,8 @@
   <button type="button" {{on "click" (fn @onClick "center")}} aria-pressed={{eq @look "center"}} aria-label="look center">{{fa-icon "dot-circle"}}</button>
   <button type="button" {{on "click" (fn @onClick "right")}} aria-pressed={{eq @look "right"}} aria-label="look right">{{fa-icon "arrow-right"}}</button>
 
-  {{!--
-  <button local-class="auto" type="button" {{on "click" (fn @onClick undefined)}} aria-pressed={{eq this.look undefined}}>auto</button>
-  <button local-class="jump" type="button" {{on "click" this.toggleJump}}>jump</button>
-  --}}
+  {{#if @withJump}}
+    <button local-class="auto" type="button" {{on "click" (fn @onClick undefined)}} aria-pressed={{eq @look undefined}}>auto</button>
+    <button local-class="jump" type="button" {{on "click" @onJump}}>jump</button>
+  {{/if}}
 </div>

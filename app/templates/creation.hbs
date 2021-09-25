@@ -27,10 +27,10 @@
       {{/animated-if}}
     </AnimatedContainer>
     <div local-class="mira-wrapper">
-      <MiraStepped @step={{this.step}} @look={{this.look}} local-class="mira"/>
+      <MiraStepped @step={{this.step}} @look={{this.look}} @jump={{this.jump}} local-class="mira"/>
       <AnimatedContainer @motion={{this.containerMotion}}>
-        {{#animated-if (and (gte this.step 27) (lte this.step 45)) use=this.snippetTransition}}
-          <LookControls @look={{this.look}} @onClick={{fn (mut this.look)}}/>
+        {{#animated-if this.showLookControls use=this.snippetTransition}}
+          <LookControls @look={{this._look}} @withJump={{gte this.step 48}} @onClick={{fn (mut this._look)}} @onJump={{this.toggleJump}}/>
         {{/animated-if}}
       </AnimatedContainer>
     </div>
