@@ -9,7 +9,7 @@
       {{#animated-if this.hasSnippet use=this.snippetTransition}}
         <div local-class="code">
           <AnimatedContainer>
-            {{#animated-value this.currentCodeSnippet use=this.fade as |item|}}
+            {{#animated-value this.currentCodeSnippet use=this.fade duration=300 as |item|}}
               {{#if item.snippet}}
                 <CodeBlock @code={{item.snippet}} @language={{item.language}}/>
               {{else if item.list}}

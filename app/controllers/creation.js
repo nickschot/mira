@@ -282,18 +282,6 @@ const CODE_SNIPPETS = [
   },
 ];
 
-const CODE_SNIPPETS_PER_STEP = CODE_SNIPPETS.reduce(
-  (result, { steps, ...rest }) => {
-    for (let step of steps) {
-      assert(`Step ${step} was already defined!`, !result.has(step));
-
-      result.set(step, { ...rest });
-    }
-    return result;
-  },
-  new Map()
-);
-
 export default class CreationController extends Controller {
   queryParams = ['step'];
   @tracked step = 0;
@@ -313,7 +301,7 @@ export default class CreationController extends Controller {
   }
 
   get currentCodeSnippet() {
-    return CODE_SNIPPETS_PER_STEP.get(this.step);
+    return CODE_SNIPPETS.find((item) => item.steps?.includes(this.step));
   }
 
   get hasSnippet() {
