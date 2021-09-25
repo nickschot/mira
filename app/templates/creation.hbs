@@ -26,6 +26,13 @@
         </div>
       {{/animated-if}}
     </AnimatedContainer>
-    <MiraStepped @step={{this.step}} local-class="mira"/>
+    <div local-class="mira-wrapper">
+      <MiraStepped @step={{this.step}} @look={{this.look}} local-class="mira"/>
+      <AnimatedContainer @motion={{this.containerMotion}}>
+        {{#animated-if (and (gte this.step 27) (lte this.step 45)) use=this.snippetTransition}}
+          <LookControls @look={{this.look}} @onClick={{fn (mut this.look)}}/>
+        {{/animated-if}}
+      </AnimatedContainer>
+    </div>
   </section>
 </main>

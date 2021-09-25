@@ -134,6 +134,37 @@
   border-radius: 100%;
 }
 
+:global(.step-27) .head {
+  transition: unset;
+}
+:global(.step-27) .head.up {
+  border-radius: 0 0 50% 50% / 0 0 0 0;
+  transform: translateY(-15%);
+}
+:global(.step-28) .head {
+  transition: transform 1s, border-radius 1s;
+}
+
+:global(.step-29) .head.left {
+  transform: rotate(30deg);
+  border-radius: 0 0 50% 50% / 0 0 40% 80%;
+}
+
+:global(.step-29) .head.right {
+  transform: rotate(-30deg);
+  border-radius: 0 0 50% 50% / 0 0 80% 40%;
+}
+
+:global(.step-30) .head.tilt-left {
+  transform: rotate(-15deg) translate(-10%, -8%);
+  border-radius: 0 0 50% 50% / 0 0 20% 20%;
+}
+
+:global(.step-30) .head.tilt-right {
+  transform: rotate(15deg) translate(10%, -8%);
+  border-radius: 0 0 50% 50% / 0 0 20% 20%;
+}
+
 :global(.step-27) .eye {
   box-shadow: inset 0 0 0 rgba(255,255,255,0.85);
   transition: box-shadow 4000ms;

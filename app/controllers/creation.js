@@ -133,16 +133,69 @@ const CODE_SNIPPETS = [
     steps: [25],
   },
   {
-    title: 'Blinking - CSS Transitions',
+    title: 'CSS Transitions',
     steps: [26],
     list: [
       'Transition between states',
       'Runs with state changes of CSS selector',
       'Adding/removing a class',
       'Pseudo-selectors like :hover',
+      'Limited control over timing function',
     ],
   },
   {
+    title: 'Looking up - CSS Transitions',
+    steps: [27],
+    snippet: `.head.up {
+    border-radius: 0 0 50% 50% / 0 0 0 0;
+    transform: translateY(-15%);
+  }`,
+    language: 'css',
+  },
+  {
+    title: 'Looking up - CSS Transitions',
+    steps: [28],
+    snippet: `.head {
+    border-radius: 0 0 50% 50% / 0 0 20% 20%;
+    transition: transform 1s, border-radius 1s;
+  }
+
+  .head.up {
+    border-radius: 0 0 50% 50% / 0 0 0 0;
+    transform: translateY(-15%);
+  }`,
+    language: 'css',
+  },
+  {
+    title: 'Looking left & right - CSS Transitions',
+    steps: [29],
+    snippet: `.head.left {
+    transform: rotate(30deg);
+    border-radius: 0 0 50% 50% / 0 0 40% 80%;
+  }
+
+  .head.right {
+    transform: rotate(-30deg);
+    border-radius: 0 0 50% 50% / 0 0 80% 40%;
+  }`,
+    language: 'css',
+  },
+  {
+    title: 'Tilting left & right - CSS Transitions',
+    steps: [30],
+    snippet: `.head.tilt-left {
+    transform: rotate(-15deg) translate(-10%, -8%);
+    border-radius: 0 0 50% 50% / 0 0 20% 20%;
+  }
+
+  .head.tilt-right {
+    transform: rotate(15deg) translate(10%, -8%);
+    border-radius: 0 0 50% 50% / 0 0 20% 20%;
+  }`,
+    language: 'css',
+  },
+
+  /*{
     title: 'Blinking - CSS Transitions',
     steps: [27],
     language: 'css',
@@ -265,7 +318,7 @@ const CODE_SNIPPETS = [
     steps: [39, 40],
     language: 'css',
     snippet: `/* animate amount of blur on the white box-shadow */
-  @keyframes pulse {
+  /*@keyframes pulse {
     0% {
       box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25),
                   inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
@@ -279,12 +332,13 @@ const CODE_SNIPPETS = [
                   inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
     }
   }`,
-  },
+  },*/
 ];
 
 export default class CreationController extends Controller {
   queryParams = ['step'];
   @tracked step = 0;
+  @tracked look;
 
   fade = fade;
 
@@ -305,7 +359,7 @@ export default class CreationController extends Controller {
   }
 
   get hasSnippet() {
-    return Boolean(this.currentCodeSnippet);
+    return this.currentCodeSnippet?.snippet || this.currentCodeSnippet?.list;
   }
 
   @action

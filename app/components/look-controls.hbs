@@ -1,0 +1,14 @@
+<div local-class="look-controls" ...attributes>
+  <button type="button" {{on "click" (fn @onClick "tilt-left")}} aria-pressed={{eq @look "tilt-left"}} aria-label="tilt left">{{fa-icon "undo"}}</button>
+  <button type="button" {{on "click" (fn @onClick "up")}} aria-pressed={{eq @look "up"}} aria-label="look up">{{fa-icon "arrow-up"}}</button>
+  <button type="button" {{on "click" (fn @onClick "tilt-right")}} aria-pressed={{eq @look "tilt-right"}} aria-label="tilt right">{{fa-icon "redo"}}</button>
+
+  <button type="button" {{on "click" (fn @onClick "left")}} aria-pressed={{eq @look "left"}} aria-label="look left">{{fa-icon "arrow-left"}}</button>
+  <button type="button" {{on "click" (fn @onClick "center")}} aria-pressed={{eq @look "center"}} aria-label="look center">{{fa-icon "dot-circle"}}</button>
+  <button type="button" {{on "click" (fn @onClick "right")}} aria-pressed={{eq @look "right"}} aria-label="look right">{{fa-icon "arrow-right"}}</button>
+
+  {{!--
+  <button local-class="auto" type="button" {{on "click" (fn @onClick undefined)}} aria-pressed={{eq this.look undefined}}>auto</button>
+  <button local-class="jump" type="button" {{on "click" this.toggleJump}}>jump</button>
+  --}}
+</div>

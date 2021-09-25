@@ -18,7 +18,7 @@ button, :global(.button) {
   white-space: nowrap;
   border: none;
   border-radius: 5px;
-  transition: all 0.3s;
+  transition: box-shadow 0.3s, color 0.3s;
   cursor: pointer;
   font-weight: bolder;
   text-decoration: none;
