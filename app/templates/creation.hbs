@@ -5,22 +5,26 @@
     <h2 local-class="title">{{title}}</h2>
   {{/animated-value}}
   <section local-class="content">
-    <AnimatedContainer style="overflow: hidden" @duration={{500}}>
-      {{#animated-value this.currentCodeSnippet use=this.transition as |item|}}
-        {{#if item.snippet}}
-          <div local-class="code">
-            <CodeBlock @code={{item.snippet}} @language={{item.language}}/>
-          </div>
-        {{else if item.list}}
-          <div local-class="list">
-            <ul>
-              {{#each item.list as |listItem|}}
-                <li>{{listItem}}</li>
-              {{/each}}
-            </ul>
-          </div>
-        {{/if}}
-      {{/animated-value}}
+    <AnimatedContainer @motion={{this.containerMotion}}>
+      {{#animated-if this.hasSnippet use=this.snippetTransition}}
+        <div local-class="code">
+          <AnimatedContainer>
+            {{#animated-value this.currentCodeSnippet use=this.fade as |item|}}
+              {{#if item.snippet}}
+                <CodeBlock @code={{item.snippet}} @language={{item.language}}/>
+              {{else if item.list}}
+                <div local-class="list">
+                  <ul>
+                    {{#each item.list as |listItem|}}
+                      <li>{{listItem}}</li>
+                    {{/each}}
+                  </ul>
+                </div>
+              {{/if}}
+            {{/animated-value}}
+          </AnimatedContainer>
+        </div>
+      {{/animated-if}}
     </AnimatedContainer>
     <MiraStepped @step={{this.step}} local-class="mira"/>
   </section>

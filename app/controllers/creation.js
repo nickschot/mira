@@ -3,8 +3,9 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import fade from 'ember-animated/transitions/fade';
 import { fadeOut, fadeIn } from 'ember-animated/motions/opacity';
-import { wait } from 'ember-animated';
+import { wait, printSprites } from 'ember-animated';
 import { assert } from '@ember/debug';
+import { SnippetResize } from '../motions/snippet-resize';
 
 const CODE_SNIPPETS = [
   // css
@@ -299,17 +300,24 @@ export default class CreationController extends Controller {
 
   fade = fade;
 
-  *transition({ insertedSprites, removedSprites }) {
-    if (insertedSprites.length) {
+  containerMotion = SnippetResize;
+
+  *snippetTransition({ insertedSprites, removedSprites }) {
+    if (removedSprites.length) {
+      removedSprites.forEach(fadeOut);
+      wait(500);
+    } else {
       yield wait(500);
       insertedSprites.forEach(fadeIn);
-    } else {
-      removedSprites.forEach(fadeOut);
     }
   }
 
   get currentCodeSnippet() {
     return CODE_SNIPPETS_PER_STEP.get(this.step);
+  }
+
+  get hasSnippet() {
+    return Boolean(this.currentCodeSnippet);
   }
 
   @action

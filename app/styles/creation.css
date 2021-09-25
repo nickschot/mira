@@ -26,6 +26,15 @@
   align-items: center;
 }
 
+.code, .list {
+  background: #f5f2f0;
+  border-radius: 2rem;
+}
+
+.code {
+  overflow: hidden;
+}
+
 .code pre, .code code {
   margin: 0;
   padding: 0;
@@ -39,14 +48,11 @@
 .code pre {
   /*background: rgba(255,255,255,0.5);
   backdrop-filter: blur(10px);*/
-  border-radius: 2rem;
   padding: 2rem;
 }
 
 .list {
-  background: rgba(255,255,255,0.85);
   font-size: 1.5rem;
-  border-radius: 2rem;
   padding: 2rem;
 }
 
