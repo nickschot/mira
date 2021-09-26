@@ -9,18 +9,18 @@ export default class ADayInRomeEspressoController extends Controller {
 
   fade = fade;
   css = `.mira {
-    position: absolute;
-    left: 50px;
-    bottom: 50px;
-    transition: all 3s linear;
-    transform-origin: bottom center;
-  }
+  position: absolute;
+  right: calc(100% - var(--mira-size) - 50px);
+  top: calc(100% - var(--mira-size) - 50px);
+  transition: all 3s linear;
+  transform-origin: bottom center;
+}
 
-  .mira.espresso {
-    left: 60%;
-    bottom: 60%;
-    transform: scale(0.5);
-  }`;
+.mira.espresso {
+  right: -300px;
+  top: 150px;
+  transform: scale(0.5);
+}`;
 
   @action
   toggleCode() {

@@ -1,7 +1,19 @@
-.scene {
-  width: 100%;
-  min-height: 100%;
+.page {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.scene {
+  position: relative;
+  margin-top: -100px;
+  aspect-ratio: auto 16 / 10;
+  max-height: 100vh;
+  max-width: 100vw;
+  background-image: url('/images/espresso.png');
+  background-size: 1500px;
+  background-repeat: no-repeat;
+  background-position-x: right;
 }
 
 .actions {
@@ -15,27 +27,40 @@
 .code {
   position: absolute;
   left: 25px;
-  top: 25px;
+  top: 125px;
   z-index: 2;
 }
 
-.street {
-  position: relative;
+.background {
   width: 100%;
   height: 100%;
+  text-align: right;
+}
+
+.background img {
+  width: 100%;
+}
+
+.street {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: calc(100% - 278px);
+  height: 100%;
+  overflow: hidden;
 }
 
 .mira {
   position: absolute;
-  left: 50px;
-  bottom: 50px;
+  right: calc(100% - var(--mira-size) - 50px);
+  top: calc(100% - var(--mira-size) - 50px);
   transition: all 3s linear;
   transform-origin: bottom center;
   z-index: 1;
 }
 
 .mira.espresso {
-  left: 60%;
-  bottom: 60%;
+  right: -300px;
+  top: 150px;
   transform: scale(0.5);
 }

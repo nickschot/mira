@@ -1,15 +1,18 @@
 {{page-title "Espresso"}}
 
-<div local-class="scene">
-  <div local-class="street">
-    <Mira local-class="mira {{if this.getEspresso "espresso"}}"/>
-  </div>
-
-  {{#animated-if this.showCode use=this.fade}}
-    <div local-class="code">
-      <CodeBlock @code={{this.css}} @language="css"/>
+<div local-class="page">
+  <div local-class="scene">
+    <div local-class="street">
+      <Mira local-class="mira {{if this.getEspresso "espresso"}}"/>
     </div>
-  {{/animated-if}}
+
+    {{#animated-if this.showCode use=this.fade}}
+      <div local-class="code">
+        <CodeBlock @code={{this.css}} @language="css"/>
+      </div>
+    {{/animated-if}}
+
+  </div>
 
   <div local-class="actions">
     <button local-class="toggle-code" type="button" {{on "click" this.toggleCode}}>{{if this.showCode "Hide Code" "Show Code" }}</button>
