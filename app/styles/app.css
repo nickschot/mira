@@ -23,6 +23,7 @@ button, :global(.button) {
   font-weight: bolder;
   text-decoration: none;
   display: inline-block;
+  vertical-align: top;
 }
 
 button:hover, :global(.button):hover {
