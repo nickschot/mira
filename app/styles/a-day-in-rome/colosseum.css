@@ -6,9 +6,25 @@
 
   --mira-size: 100px;
 
-  background-image: url('/images/colosseum.png');
-  background-size: contain;
+  background-image: url('/images/colosseum-1.png');
+  background-size: auto 800px;
   background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.scene::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background-image: url('/images/colosseum-2.png');
+  background-size: auto 750px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  z-index: 2;
 }
 
 .actions {
@@ -32,10 +48,11 @@
   height: 100px;
 
   position: absolute;
-  top: 380px;
+  top: 420px;
   left: 500px;
   gap: 15px;
   transition: gap 1500ms;
+  z-index: 1;
 }
 
 .queue.covid {
@@ -53,6 +70,7 @@
   position: absolute;
   bottom: 25px;
   left: 25px;
+  z-index: 3;
 }
 
 .mira {

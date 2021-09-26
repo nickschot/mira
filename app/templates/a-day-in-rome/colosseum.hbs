@@ -22,5 +22,6 @@
       <button type="button" {{on "click" (fn (mut this.covid) true)}}>Social distancing</button>
     {{/if}}
     <button type="button" {{on "click" this.allowEntry}} disabled={{not this.queue.length}}>Allow entry</button>
+    <LinkTo @route="a-day-in-rome.italy.index" class="button">To Vatican City</LinkTo>
   </div>
 </div>
