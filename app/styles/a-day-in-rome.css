@@ -1,4 +1,10 @@
-pre::before {
+.a-day-in-rome {
+  flex-grow: 1;
+  min-height: 100%;
+  display: flex;
+}
+
+.a-day-in-rome pre::before {
   content: '';
   position: absolute;
   bottom: 0;
