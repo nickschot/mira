@@ -2,22 +2,32 @@
 
 <div local-class="scene" {{did-insert (perform this.dropTask)}}>
   <div local-class="queue {{if this.covid "covid"}}">
-    {{#animated-each this.queue use=this.transition duration=2000 as |miraInstance index|}}
-      <div data-id={{miraInstance}}>
-        <Mira {{on "click" (fn this.toGroup miraInstance)}} @look="center" local-class="mira" />
-      </div>
+    {{#animated-each this.queue use=this.transition duration=this.duration as |miraNumber|}}
+      <Mira {{on "click" (fn this.toGroup miraNumber)}} @look="center" local-class="mira" />
     {{/animated-each}}
   </div>
 
   <div local-class="group">
-    {{#animated-each this.group use=this.transition duration=2000 as |miraInstance index|}}
-      <div data-id={{miraInstance}}>
-        <Mira {{on "click" (fn this.toQueue miraInstance)}} @look="center" local-class="mira {{if this.drop "drop"}}" style={{if this.drop (concat "animation-delay: calc(0.5 * " index "s);")}} />
-      </div>
+    {{#animated-each this.group use=this.transition duration=this.duration as |miraNumber index|}}
+      <Mira {{on "click" (fn this.toQueue miraNumber)}} @look="center" local-class="mira {{if this.drop "drop"}}" style={{if this.drop (concat "animation-delay: calc(0.5 * " index "s);")}} />
     {{/animated-each}}
   </div>
 
+  {{#animated-if this.showCode use=this.fade}}
+    <div local-class="code">
+      {{#if this.hasSnippet}}
+        <CodeBlock @code={{this.currentCodeSnippet.snippet}} @language={{this.currentCodeSnippet.language}}/>
+      {{/if}}
+      <div local-class="code-actions actions">
+        <button type="button" {{on "click" this.previous}} disabled={{eq this.step 0}}>{{fa-icon "arrow-left"}}</button>
+        <button type="button" {{on "click" this.next}} disabled={{this.nextDisabled}}>{{fa-icon "arrow-right"}}</button>
+      </div>
+    </div>
+  {{/animated-if}}
+
   <div local-class="actions">
+    <button type="button" {{on "click" (fn (mut this.animate) (not this.animate))}}>{{if this.animate "Don't animate" "Animate"}}</button>
+    <button type="button" {{on "click" (fn (mut this.showCode) (not this.showCode))}}>{{if this.showCode "Hide code" "Show code"}}</button>
     {{#if (not this.covid)}}
       <button type="button" {{on "click" (fn (mut this.covid) true)}}>Social distancing</button>
     {{/if}}

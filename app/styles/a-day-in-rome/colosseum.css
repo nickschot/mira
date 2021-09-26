@@ -39,7 +39,7 @@
   position: absolute;
   left: 25px;
   top: 25px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .queue {
@@ -48,8 +48,8 @@
   height: 100px;
 
   position: absolute;
-  top: 420px;
-  left: 500px;
+  top: 400px;
+  left: 600px;
   gap: 15px;
   transition: gap 1500ms;
   z-index: 1;
