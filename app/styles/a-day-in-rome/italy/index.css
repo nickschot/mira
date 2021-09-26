@@ -12,6 +12,11 @@
 }
 
 .mira {
+  display: inline-block;
+  transform-origin: center bottom;
+  transform: scale(1);
+
+  --mira-size: 150px;
 }
 
 .actions {
