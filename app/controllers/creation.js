@@ -412,18 +412,38 @@ const CODE_SNIPPETS = [
     steps: [54],
     language: 'css',
     snippet: `@jump-shadow {
-    0%   { transform: scale(1);    }
-    30%  { transform: scale(1);    }
-    45%  { transform: scale(1.15);  }
-    50%  { transform: scale(1.17); }
-    55%  { transform: scale(1.17); }
-    75%  { transform: scale(1);    }
-    100% { transform: scale(1);    }
+    0%   { transform: scale(1);    opacity: 0.5; }
+    30%  { transform: scale(1);    opacity: 0.5; }
+
+    /* going upwards */
+
+    45%  { transform: scale(1.15); opacity: 0.35; }
+    50%  { transform: scale(1.17); opacity: 0.33; }
+    55%  { transform: scale(1.17); opacity: 0.33; }
+
+    /* going downwards */
+
+    75%  { transform: scale(1);    opacity: 0.5; }
+    100% { transform: scale(1);    opacity: 0.5; }
   }
 
   .shadow.jump {
     animation: jump-shadow linear 1.25s;
   }`,
+  },
+  {
+    title: 'Jump! - CSS Animations',
+    steps: [55],
+    language: 'javascript',
+    snippet: `// component
+  @task({ drop: true })
+  *jumpTask() {
+    yield timeout(1250);
+  }
+
+  // template
+  <div class="mira   {{if this.jumpTask.isRunning "jump"}}">.</div>
+  <div class="shadow {{if this.jumpTask.isRunning "jump"}}">.</div>`,
   },
 ];
 

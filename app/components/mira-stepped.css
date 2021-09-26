@@ -295,24 +295,31 @@
 @keyframes jump-shadow {
   0% {
     transform: scale(1);
+    opacity: 0.5;
   }
   30% {
     transform: scale(1);
+    opacity: 0.5;
   }
   45% {
     transform: scale(1.15);
+    opacity: 0.35;
   }
   50% {
     transform: scale(1.17);
+    opacity: 0.33;
   }
   55%  {
     transform: scale(1.17);
+    opacity: 0.33;
   }
   75% {
     transform: scale(1);
+    opacity: 0.5;
   }
   100% {
     transform: scale(1);
+    opacity: 0.5;
   }
 }
 

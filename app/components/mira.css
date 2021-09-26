@@ -27,9 +27,9 @@
 .shadow {
   position: absolute;
   bottom: 0;
-  left: calc(var(--mira-size) * 0.1);
-  width: calc(var(--mira-size) * 0.8);
-  height: calc(var(--mira-size) * 0.15);
+  left: 10%;
+  width: 80%;
+  height: 15%;
   border-radius: 100%;
   background: #000;
   opacity: 0.5;
@@ -150,13 +150,13 @@
     transform: translateY(0) scale(1, 1);
   }
   45% {
-    transform: translateY(calc(var(--mira-size) * -0.15)) scale(0.95, 1.05);
+    transform: translateY(-15%) scale(0.95, 1.05);
   }
   50% {
-    transform: translateY(calc(var(--mira-size) * -0.17)) scale(0.95, 1.05);
+    transform: translateY(-17%) scale(0.95, 1.05);
   }
   55% {
-    transform: translateY(calc(var(--mira-size) * -0.17)) scale(0.95, 1.05);
+    transform: translateY(-17%) scale(0.95, 1.05);
   }
   75% {
     transform: translateY(0) scale(0.95, 1.05);
@@ -172,23 +172,30 @@
 @keyframes jump-shadow {
   0% {
     transform: scale(1);
+    opacity: 0.5;
   }
   30% {
     transform: scale(1);
+    opacity: 0.5;
   }
   45% {
-    transform: scale(0.8);
+    transform: scale(1.15);
+    opacity: 0.35;
   }
   50% {
-    transform: scale(0.75);
+    transform: scale(1.17);
+    opacity: 0.33;
   }
   55%  {
-    transform: scale(0.75);
+    transform: scale(1.17);
+    opacity: 0.33;
   }
   75% {
     transform: scale(1);
+    opacity: 0.5;
   }
-  1000% {
+  100% {
     transform: scale(1);
+    opacity: 0.5;
   }
 }
