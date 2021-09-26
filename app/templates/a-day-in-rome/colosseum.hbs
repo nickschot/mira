@@ -1,19 +1,18 @@
 {{page-title "Colosseum"}}
 
-<div local-class="scene">
+<div local-class="scene" {{did-insert (perform this.dropTask)}}>
   <div local-class="queue {{if this.covid "covid"}}">
     {{#animated-each this.queue use=this.transition duration=2000 as |miraInstance index|}}
       <div data-id={{miraInstance}}>
-        {{log index}}
         <Mira {{on "click" (fn this.toGroup miraInstance)}} @look="center" local-class="mira" />
       </div>
     {{/animated-each}}
   </div>
 
   <div local-class="group">
-    {{#animated-each this.group use=this.transition duration=2000 as |miraInstance|}}
+    {{#animated-each this.group use=this.transition duration=2000 as |miraInstance index|}}
       <div data-id={{miraInstance}}>
-        <Mira {{on "click" (fn this.toQueue miraInstance)}} @look="center" local-class="mira" />
+        <Mira {{on "click" (fn this.toQueue miraInstance)}} @look="center" local-class="mira {{if this.drop "drop"}}" style={{if this.drop (concat "animation-delay: calc(0.5 * " index "s);")}} />
       </div>
     {{/animated-each}}
   </div>

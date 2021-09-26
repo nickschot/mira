@@ -2,7 +2,8 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import move, { continuePrior } from 'ember-animated/motions/move';
+import move from 'ember-animated/motions/move';
+import { task, timeout } from 'ember-concurrency';
 
 export default class ADayInRomeColosseumController extends Controller {
   @service('-ea-motion') motion;
@@ -35,8 +36,9 @@ export default class ADayInRomeColosseumController extends Controller {
     });
   }
 
-  @tracked group = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  @tracked group = [1, 2, 3, 4, 5, 6, 7, 8];
   @tracked queue = [];
+  @tracked drop = true;
 
   @action
   toQueue(miraInstance) {
@@ -63,5 +65,11 @@ export default class ADayInRomeColosseumController extends Controller {
     if (this.queue.length) {
       this.queue = this.queue.slice(1);
     }
+  }
+
+  @task
+  *dropTask() {
+    yield timeout(5000);
+    this.drop = false;
   }
 }

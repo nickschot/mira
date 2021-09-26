@@ -14,7 +14,7 @@
   background: transparent;
 
   overflow: hidden;
-  transform-origin: bottom;
+  transform-origin: center bottom;
 
   /*
    * Prevent safari bug with transitioning an element with overflow hidden
