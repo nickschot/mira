@@ -451,6 +451,7 @@ export default class CreationController extends Controller {
   @tracked step = 0;
   @tracked _look;
   @tracked jump = false;
+  @tracked showOverflow = false;
 
   get showLookControls() {
     return (this.step >= 27 && this.step <= 31) || this.step >= 49;

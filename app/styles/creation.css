@@ -98,7 +98,7 @@
   font-size: 1.5rem;
 }
 
-:global(.step-30:not(.step-31)) > div {
+.overflow:global(.step-30:not(.step-31)) > div {
   overflow: visible!important;
 }
 
