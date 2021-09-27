@@ -5,6 +5,22 @@
     <div local-class="aspect-ratio-box-wrapper">
       <div local-class="aspect-ratio-box">
         {{outlet}}
+
+        {{#animated-if this.showCode use=this.fade}}
+          <div local-class="code">
+            {{#if this.hasSnippet}}
+              <CodeBlock @code={{this.currentCodeSnippet.snippet}} @language={{this.currentCodeSnippet.language}}/>
+            {{/if}}
+            <div local-class="code-actions actions">
+              <button type="button" {{on "click" this.previous}} disabled={{eq this.step 0}}>{{fa-icon "arrow-left"}}</button>
+              <button type="button" {{on "click" this.next}} disabled={{this.nextDisabled}}>{{fa-icon "arrow-right"}}</button>
+            </div>
+          </div>
+        {{/animated-if}}
+
+        <div local-class="actions">
+          <button type="button" {{on "click" (fn (mut this.showCode) (not this.showCode))}}>{{if this.showCode "Hide code" "Show code"}}</button>
+        </div>
       </div>
     </div>
   </div>

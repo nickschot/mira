@@ -28,7 +28,7 @@
 
       {{#animated-if (eq this.step 30) use=this.fade duration=300}}
         <div local-class="overflow-button">
-          <button {{on "click" (fn (mut this.showOverflow) (not this.showOverflow))}}>{{if this.showOverflow "Hide overflow" "Show overflow"}}</button>
+          <button type="button" {{on "click" (fn (mut this.showOverflow) (not this.showOverflow))}}>{{if this.showOverflow "Hide overflow" "Show overflow"}}</button>
         </div>
       {{/animated-if}}
     </AnimatedContainer>
