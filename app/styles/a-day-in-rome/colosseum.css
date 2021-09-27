@@ -37,6 +37,7 @@
   display: flex;
   padding: 25px;
   gap: 15px;
+  justify-content: flex-end;
 }
 
 .flip {
