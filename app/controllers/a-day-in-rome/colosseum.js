@@ -82,6 +82,7 @@ export default class ADayInRomeColosseumController extends Controller {
   @tracked drop = true;
   @tracked animate = false;
   @tracked showCode = false;
+  @tracked showFlip = false;
 
   get duration() {
     return this.animate ? 2000 : 0;

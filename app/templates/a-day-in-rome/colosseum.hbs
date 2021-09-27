@@ -25,9 +25,18 @@
     </div>
   {{/animated-if}}
 
+  {{#animated-if this.showFlip use=this.fade}}
+    <div local-class="code flip">
+      <div local-class="a">A</div>
+      <div local-class="b">B</div>
+      <div local-class="b-ghost">B</div>
+    </div>
+  {{/animated-if}}
+
   <div local-class="actions">
-    <button type="button" {{on "click" (fn (mut this.animate) (not this.animate))}}>{{if this.animate "Don't animate" "Animate"}}</button>
+    <button type="button" {{on "click" (fn (mut this.showFlip) (not this.showFlip))}}>{{if this.showFlip "Hide flip" "Show flip"}}</button>
     <button type="button" {{on "click" (fn (mut this.showCode) (not this.showCode))}}>{{if this.showCode "Hide code" "Show code"}}</button>
+    <button type="button" {{on "click" (fn (mut this.animate) (not this.animate))}} style="margin-left: auto;">{{if this.animate "Don't animate" "Animate"}}</button>
     {{#if (not this.covid)}}
       <button type="button" {{on "click" (fn (mut this.covid) true)}}>Social distancing</button>
     {{/if}}

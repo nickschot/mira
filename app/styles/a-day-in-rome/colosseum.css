@@ -10,6 +10,7 @@
   background-size: auto 800px;
   background-repeat: no-repeat;
   background-position: top left;
+  overflow: hidden;
 }
 
 .scene::after {
@@ -29,10 +30,88 @@
 
 .actions {
   position: absolute;
-  bottom: 25px;
-  right: 25px;
+  bottom: 0;
+  right: 0;
   width: 100%;
   text-align: right;
+  display: flex;
+  padding: 25px;
+  gap: 15px;
+}
+
+.flip {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px - 100px);
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(50px);
+  border-radius: 2rem;
+}
+
+.a, .b, .b-ghost {
+  position: absolute;
+  top: calc(50% - 10vw);
+
+  width: 20vw;
+  aspect-ratio: 1/1;
+  border: 4px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+}
+
+.a {
+  left: 10vw;
+  animation: a infinite 10s linear;
+}
+
+.b {
+  right: 10vw;
+  border-style: dotted;
+}
+
+.b-ghost {
+  right: calc(100% - 10vw - 20vw);
+  animation: b-ghost infinite 10s linear;
+}
+
+@keyframes a {
+  0% {
+    border-style: solid;
+  }
+  39% {
+    border-style: solid;
+  }
+  40% {
+    border-style: dotted;
+  }
+  100% {
+    border-style: dotted;
+  }
+}
+
+@keyframes b-ghost {
+  0% {
+    opacity: 0;
+  }
+  39% {
+    opacity: 0;
+    right: calc(100% - 10vw - 20vw);
+  }
+  40% {
+    opacity: 1;
+    right: calc(100% - 10vw - 20vw);
+  }
+  70% {
+    right: 10vw;
+  }
+  100% {
+    right: 10vw;
+  }
 }
 
 .code {
@@ -68,7 +147,7 @@
   height: 250px;
 
   position: absolute;
-  bottom: 25px;
+  bottom: 75px;
   left: 25px;
   z-index: 3;
 }
