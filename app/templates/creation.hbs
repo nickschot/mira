@@ -25,9 +25,21 @@
           </AnimatedContainer>
         </div>
       {{/animated-if}}
+
+      {{#animated-if (eq this.step 30) use=this.fade duration=300}}
+        <div local-class="overflow-button">
+          <button {{on "click" (fn (mut this.showOverflow) (not this.showOverflow))}}>{{if this.showOverflow "Hide overflow" "Show overflow"}}</button>
+        </div>
+      {{/animated-if}}
     </AnimatedContainer>
     <div local-class="mira-wrapper">
-      <MiraStepped @step={{this.step}} @look={{this.look}} @jump={{this.jump}} local-class="mira"/>
+      <MiraStepped @step={{this.step}} @look={{this.look}} @jump={{this.jump}} local-class="mira {{if this.showOverflow "overflow"}}"/>
+      {{#animated-if (eq this.step 4) use=this.fade duration=300}}
+        <div local-class="border-radius-overlay">
+          <span local-class="horizontal">50%</span>
+          <span local-class="vertical">60%</span>
+        </div>
+      {{/animated-if}}
       <AnimatedContainer @motion={{this.containerMotion}}>
         {{#animated-if this.showLookControls use=this.snippetTransition}}
           <LookControls @look={{this._look}} @withJump={{gte this.step 48}} @onClick={{fn (mut this._look)}} @onJump={{this.toggleJump}}/>

@@ -40,7 +40,7 @@ export default class MiraSteppedComponent extends Component {
   *blinkTask() {
     while (true) {
       yield timeout(2500 + Math.random() * 2500);
-      if (this.args.step > 38) {
+      if (this.args.step >= 38) {
         this.eyesClosed = true;
         yield timeout(250);
         this.eyesClosed = false;

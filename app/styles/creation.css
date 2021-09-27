@@ -66,5 +66,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
+.border-radius-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(50% + 2px);
+  height: calc(60% + 2px);
+
+  border-bottom: 4px dashed black;
+  border-right: 4px dashed black;
+  z-index: 3;
+}
+
+.horizontal {
+  position: absolute;
+  bottom: -3rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.vertical {
+  position: absolute;
+  left: calc(100% + 1rem);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+:global(.step-30:not(.step-31)) > div {
+  overflow: visible!important;
+}
+
+.overflow-button {
+  text-align: right;
+  margin-top: 1rem;
+  margin-right: 100px;
+}

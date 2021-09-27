@@ -3,8 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import fade from 'ember-animated/transitions/fade';
 import { fadeOut, fadeIn } from 'ember-animated/motions/opacity';
-import { wait, printSprites } from 'ember-animated';
-import { assert } from '@ember/debug';
+import { wait } from 'ember-animated';
 import { SnippetResize } from '../motions/snippet-resize';
 
 const CODE_SNIPPETS = [
@@ -12,10 +11,14 @@ const CODE_SNIPPETS = [
   {
     title: 'Basic shape',
     snippet: `.mira {
+    position: relative;
+    width: var(--mira-size);
+    height: var(--mira-size);
+
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   }`,
     language: 'css',
-    steps: [2, 3],
+    steps: [2, 3, 4],
   },
   {
     title: 'Body',
@@ -31,8 +34,7 @@ const CODE_SNIPPETS = [
     title: 'Body',
     snippet: `.body {
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.25),
-                inset 0 0 calc(var(--mira-size) * 0.5) 0 #fff;
+    box-shadow: inset 0 0 calc(var(--mira-size) * 0.5) #fff;
   }`,
     language: 'css',
     steps: [7, 8],
@@ -136,11 +138,11 @@ const CODE_SNIPPETS = [
     title: 'CSS Transitions',
     steps: [26],
     list: [
-      'Transition between states',
-      'Runs with state changes of CSS selector',
+      'Transition between (CSS) states',
+      'Limited control over timing function',
+      'Runs CSS state changes',
       'Adding/removing a class',
       'Pseudo-selectors like :hover',
-      'Limited control over timing function',
     ],
   },
   {
@@ -275,9 +277,9 @@ const CODE_SNIPPETS = [
     title: 'CSS Animations',
     steps: [40],
     list: [
-      'More control over timing and easing',
       'Allows more complicated effects',
       'Specification through keyframes',
+      'More control over timing and easing',
     ],
   },
   {
@@ -318,7 +320,7 @@ const CODE_SNIPPETS = [
   }
 
   .body {
-    animation: background-pulse infinite 4s
+    animation: background-pulse infinite 4s;
   }
   `,
   },
@@ -329,16 +331,13 @@ const CODE_SNIPPETS = [
     snippet: `/* animate amount of blur on the white box-shadow */
   @keyframes pulse {
     0% {
-      box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25),
-                  inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
+      box-shadow: inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
     }
     50% {
-      box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25),
-                  inset 0 0 calc(var(--mira-size) * 0.25) 0 #fff;
+      box-shadow: inset 0 0 calc(var(--mira-size) * 0.25) 0 #fff;
     }
     100% {
-      box-shadow: inset 0 0 1px 0 rgba(255,255,255,0.25),
-                  inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
+      box-shadow: inset 0 0 calc(var(--mira-size) * 0.65) 0 #fff;
     }
   }`,
   },
