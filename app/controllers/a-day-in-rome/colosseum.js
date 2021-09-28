@@ -50,7 +50,7 @@ const CODE_SNIPPETS = [
     language: 'javascript',
     snippet: `import move from 'ember-animated/motions/move';
 
-  *transitionQueue({ keptSprites, removedSprites }) {
+  *transitionQueue({ keptSprites }) {
     keptSprites.forEach(move);
   }
 
