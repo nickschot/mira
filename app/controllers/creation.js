@@ -274,15 +274,16 @@ const CODE_SNIPPETS = [
   {
     title: 'CSS Transitions',
     steps: [39],
-    list: ['Simple', 'Performant', 'Limited control'],
+    list: ['Simple', 'Performant', 'Limited control', 'ember-css-transitions'],
   },
   {
     title: 'CSS Animations',
     steps: [40],
     list: [
-      'Allows more complicated effects',
       'Specification through keyframes',
+      'Easier orchestration',
       'More control over timing and easing',
+      'Allows more complicated effects',
     ],
   },
   {
