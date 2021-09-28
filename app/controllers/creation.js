@@ -26,6 +26,7 @@ const CODE_SNIPPETS = [
     width: 100%;
     height: 100%;
     background: rgba(224, 78, 57, 1);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   }`,
     language: 'css',
     steps: [5, 6],
@@ -33,6 +34,8 @@ const CODE_SNIPPETS = [
   {
     title: 'Body',
     snippet: `.body {
+    ...
+
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     box-shadow: inset 0 0 calc(var(--mira-size) * 0.5) #fff;
   }`,
@@ -149,7 +152,7 @@ const CODE_SNIPPETS = [
     title: 'Looking around - CSS Transitions',
     steps: [27],
     list: [
-      'Add some controls for looking up, sideways and tilting',
+      'Controls for looking up, sideways and tilting',
       'Argument that adds a class to Mira',
       'i.e. `class="up"` for looking up',
     ],
@@ -183,12 +186,12 @@ const CODE_SNIPPETS = [
     steps: [30],
     snippet: `.head.left {
     transform: rotate(30deg);
-    border-radius: 0 0 50% 50% / 0 0 40% 80%;
+    border-radius: 0 0 50% 50% / 0 0 33% 67%;
   }
 
   .head.right {
     transform: rotate(-30deg);
-    border-radius: 0 0 50% 50% / 0 0 80% 40%;
+    border-radius: 0 0 50% 50% / 0 0 67% 33%;
   }`,
     language: 'css',
   },
@@ -297,7 +300,7 @@ const CODE_SNIPPETS = [
   }
 
   .body {
-    animation: background-pulse infinite 4s
+    animation: background-pulse infinite 4s;
   }
   `,
   },
@@ -374,8 +377,6 @@ const CODE_SNIPPETS = [
 
     opacity: 0.5;
     filter: blur(25px);
-    transform-origin: center;
-    transform: translateZ(0);
   }`,
   },
   {

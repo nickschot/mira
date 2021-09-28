@@ -1,6 +1,6 @@
 {{page-title "Creation"}}
 
-<main local-class="page" {{on-key "-" this.previousStep}} {{on-key "=" this.nextStep}}>
+<main local-class="page" {{on-key "-" this.previousStep}} {{on-key "=" this.nextStep}}  {{on-key "ArrowLeft" this.previousStep}} {{on-key "ArrowRight" this.nextStep}}>
   {{#animated-value this.currentCodeSnippet.title use=this.fade as |title|}}
     <h2 local-class="title">{{title}}</h2>
   {{/animated-value}}
@@ -26,7 +26,7 @@
         </div>
       {{/animated-if}}
 
-      {{#animated-if (eq this.step 30) use=this.fade duration=300}}
+      {{#animated-if (and (gte this.step 28) (lte this.step 30)) use=this.fade duration=300}}
         <div local-class="overflow-button">
           <button type="button" {{on "click" (fn (mut this.showOverflow) (not this.showOverflow))}}>{{if this.showOverflow "Hide overflow" "Show overflow"}}</button>
         </div>

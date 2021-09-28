@@ -103,6 +103,12 @@
   overflow: hidden;
 }
 
+:global(.step-17:not(.step-19)) .mira,
+:global(.step-18:not(.step-19)) .mira {
+  transform: scale(2);
+  transform-origin: bottom left;
+}
+
 :global(.step-18) .mira {
   background: none;
 }
@@ -150,12 +156,12 @@
 
 :global(.step-30) .head.left {
   transform: rotate(30deg);
-  border-radius: 0 0 50% 50% / 0 0 40% 80%;
+  border-radius: 0 0 50% 50% / 0 0 33% 67%;
 }
 
 :global(.step-30) .head.right {
   transform: rotate(-30deg);
-  border-radius: 0 0 50% 50% / 0 0 80% 40%;
+  border-radius: 0 0 50% 50% / 0 0 67% 33%;
 }
 
 :global(.step-31) .head.tilt-left {
@@ -210,7 +216,6 @@
 :global(.step-52) .shadow {
   opacity: 0.5;
   filter: blur(25px);
-  transform-origin: center;
   transform: translateZ(0);
 }
 

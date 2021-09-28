@@ -11,8 +11,8 @@ const CODE_SNIPPETS = [
   {
     language: 'handlebars',
     snippet: `// component
-  @tracked group = [1, 2, 3, 4, 5, 6, 7, 8];
   @tracked queue = [];
+  @tracked group = [1, 2, 3, 4, 5, 6, 7, 8];
 
   // template
   <div class="queue">
@@ -30,18 +30,18 @@ const CODE_SNIPPETS = [
   {
     language: 'handlebars',
     snippet: `// component
-  @tracked group = [1, 2, 3, 4, 5, 6, 7, 8];
   @tracked queue = [];
+  @tracked group = [1, 2, 3, 4, 5, 6, 7, 8];
 
   // template
   <div local-class="queue {{if this.covid "covid"}}">
-    {{#animated-each this.queue use=this.transition duration=2000 as |miraNumber|}}
+    {{#animated-each this.queue use=this.transitionQueue duration=2000 as |miraNumber|}}
       <Mira {{on "click" (fn this.toGroup miraNumber)}} />
     {{/animated-each}}
   </div>
 
   <div local-class="group">
-    {{#animated-each this.group use=this.transition duration=2000 as |miraNumber|}}
+    {{#animated-each this.group use=this.transitionGroup duration=2000 as |miraNumber|}}
       <Mira {{on "click" (fn this.toQueue miraNumber)}} />
     {{/animated-each}}
   </div>`,
@@ -50,25 +50,28 @@ const CODE_SNIPPETS = [
     language: 'javascript',
     snippet: `import move from 'ember-animated/motions/move';
 
-  *transition({ sentSprites, receivedSprites, keptSprites }) {
-    [...sentSprites, ...receivedSprites].forEach(move);
-
+  *transitionQueue({ keptSprites, removedSprites }) {
     keptSprites.forEach(move);
+  }
+
+  *transitionGroup({ keptSprites, sentSprites, receivedSprites }) {
+    [...keptSprites, ...sentSprites, ...receivedSprites].forEach(move);
   }`,
   },
   {
     language: 'javascript',
     snippet: `import move from 'ember-animated/motions/move';
 
-  *transition({ sentSprites, receivedSprites, keptSprites, removedSprites }) {
-    [...sentSprites, ...receivedSprites].forEach(move);
-
+  *transitionQueue({ keptSprites, removedSprites }) {
     keptSprites.forEach(move);
-
     removedSprites.forEach((sprite) => {
       sprite.endTranslatedBy(-400, 0);
       move(sprite);
     });
+  }
+
+  *transitionGroup({ keptSprites, sentSprites, receivedSprites }) {
+    [...keptSprites, ...sentSprites, ...receivedSprites].forEach(move);
   }`,
   },
 ];
@@ -99,20 +102,13 @@ export default class ADayInRomeColosseumController extends Controller {
   }
 
   // eslint-disable-next-line require-yield
-  *transition({ keptSprites, sentSprites, receivedSprites, removedSprites }) {
+  *transitionGroup({ keptSprites, sentSprites, receivedSprites }) {
+    [...keptSprites, ...sentSprites, ...receivedSprites].forEach(move);
+  }
+
+  // eslint-disable-next-line require-yield
+  *transitionQueue({ keptSprites, removedSprites }) {
     keptSprites.forEach(move);
-    sentSprites.forEach((sprite) => {
-      sprite.applyStyles({
-        'z-index': '10',
-      });
-      move(sprite);
-    });
-    receivedSprites.forEach((sprite) => {
-      sprite.applyStyles({
-        'z-index': '11',
-      });
-      move(sprite);
-    });
     removedSprites.forEach((sprite) => {
       sprite.endTranslatedBy(-400, 0);
       move(sprite);

@@ -2,13 +2,13 @@
 
 <div local-class="scene" {{did-insert (perform this.dropTask)}}>
   <div local-class="queue {{if this.covid "covid"}}">
-    {{#animated-each this.queue use=this.transition duration=this.duration as |miraNumber|}}
+    {{#animated-each this.queue use=this.transitionQueue duration=this.duration as |miraNumber|}}
       <Mira {{on "click" (fn this.toGroup miraNumber)}} @look="center" local-class="mira" />
     {{/animated-each}}
   </div>
 
   <div local-class="group">
-    {{#animated-each this.group use=this.transition duration=this.duration as |miraNumber index|}}
+    {{#animated-each this.group use=this.transitionGroup duration=this.duration as |miraNumber index|}}
       <Mira {{on "click" (fn this.toQueue miraNumber)}} @look="center" local-class="mira {{if this.drop "drop"}}" style={{if this.drop (concat "animation-delay: calc(0.5 * " index "s);")}} />
     {{/animated-each}}
   </div>
