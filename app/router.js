@@ -16,4 +16,5 @@ Router.map(function () {
       this.route('vatican');
     });
   });
+  this.route('coming-soon-tm');
 });

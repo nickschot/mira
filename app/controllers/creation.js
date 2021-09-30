@@ -136,6 +136,7 @@ const CODE_SNIPPETS = [
   {
     title: 'Animating Mira',
     steps: [25],
+    list: ['CSS Transitions', 'CSS Animations', 'ember-concurrency'],
   },
   {
     title: 'CSS Transitions',
@@ -349,7 +350,7 @@ const CODE_SNIPPETS = [
     title: 'Keyframes - CSS Animations',
     steps: [48],
     list: [
-      'With a linear easing, they are basically "frames"',
+      'With a linear easing, they behave like "frames"',
       'Possibility for completely custom timings',
     ],
   },

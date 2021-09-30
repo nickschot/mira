@@ -45,7 +45,7 @@
   top: 25px;
   left: 25px;
   width: calc(100% - 50px);
-  height: calc(100% - 50px - 100px);
+  height: calc(100% - 50px - 100px - 100px);
   background: rgba(255,255,255,0.5);
   backdrop-filter: blur(50px);
   border-radius: 2rem;

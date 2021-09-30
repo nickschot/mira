@@ -1,0 +1,31 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 25px 50px 50px 50px;
+  grid-gap: 50px;
+  max-height: calc(100vh - 100px);
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0;
+  padding: 0 8rem;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  display: block;
+  border-radius: 2rem;
+  width: 100%;
+}
