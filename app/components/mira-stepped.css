@@ -223,7 +223,7 @@
   animation: jump linear 1.25s;
 }
 
-:global(.step-54) .shadow.jump {
+:global(.step-55) .shadow.jump {
   animation: jump-shadow linear 1.25s;
 }
 

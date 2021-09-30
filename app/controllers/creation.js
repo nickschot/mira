@@ -136,7 +136,12 @@ const CODE_SNIPPETS = [
   {
     title: 'Animating Mira',
     steps: [25],
-    list: ['CSS Transitions', 'CSS Animations', 'ember-concurrency'],
+    list: [
+      'CSS Transitions',
+      'CSS Animations',
+      'ember-concurrency',
+      'Advanced Animations',
+    ],
   },
   {
     title: 'CSS Transitions',
@@ -144,7 +149,7 @@ const CODE_SNIPPETS = [
     list: [
       'Transition between (CSS) states',
       'Limited control over timing function',
-      'Runs CSS state changes',
+      'Runs on CSS state changes',
       'Adding/removing a class',
       'Pseudo-selectors like :hover',
     ],
@@ -230,7 +235,7 @@ const CODE_SNIPPETS = [
     language: 'css',
     snippet: `.eye {
     box-shadow: inset 0 0 0 rgba(255,255,255,0.85);
-    transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms;
   }
 
   .eye.closed {
@@ -257,7 +262,7 @@ const CODE_SNIPPETS = [
       while (true) {
         yield timeout(2500 + Math.random() * 2500);
         this.eyesClosed = true;
-        yield timeout(250);
+        yield timeout(150);
         this.eyesClosed = false;
       }
     }
@@ -384,6 +389,20 @@ const CODE_SNIPPETS = [
   {
     title: 'Jump! - CSS Animations',
     steps: [53],
+    language: 'javascript',
+    snippet: `// component
+  @task({ drop: true })
+  *jumpTask() {
+    yield timeout(1250);
+  }
+
+  // template
+  <div class="mira   {{if this.jumpTask.isRunning "jump"}}">.</div>
+  <div class="shadow {{if this.jumpTask.isRunning "jump"}}">.</div>`,
+  },
+  {
+    title: 'Jump! - CSS Animations',
+    steps: [54],
     language: 'css',
     snippet: `@jump {
     /* preparing */
@@ -411,7 +430,7 @@ const CODE_SNIPPETS = [
   },
   {
     title: 'Jump! - CSS Animations',
-    steps: [54],
+    steps: [55],
     language: 'css',
     snippet: `@jump-shadow {
     0%   { transform: scale(1);    opacity: 0.5; }
@@ -432,20 +451,6 @@ const CODE_SNIPPETS = [
   .shadow.jump {
     animation: jump-shadow linear 1.25s;
   }`,
-  },
-  {
-    title: 'Jump! - CSS Animations',
-    steps: [55],
-    language: 'javascript',
-    snippet: `// component
-  @task({ drop: true })
-  *jumpTask() {
-    yield timeout(1250);
-  }
-
-  // template
-  <div class="mira   {{if this.jumpTask.isRunning "jump"}}">.</div>
-  <div class="shadow {{if this.jumpTask.isRunning "jump"}}">.</div>`,
   },
 ];
 
