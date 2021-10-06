@@ -48,7 +48,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/mira';
+    ENV.rootURL = '/mira/';
     ENV.locationType = 'hash';
   }
 
