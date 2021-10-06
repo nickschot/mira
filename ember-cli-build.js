@@ -9,6 +9,10 @@ module.exports = function (defaults) {
       components: ['markup', 'scss', 'javascript'], //needs to be an array, or undefined.
       plugins: ['highlight-keywords'],
     },
+
+    fingerprint: {
+      prepend: '/mira/',
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
